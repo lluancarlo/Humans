@@ -1,0 +1,366 @@
+[gd_scene load_steps=19 format=3 uid="uid://bom6akn7t1mm7"]
+
+[ext_resource type="Material" uid="uid://bau1jha3mvwlb" path="res://materials/floor.material" id="1_feb5d"]
+[ext_resource type="Material" uid="uid://c56n1klbei4q5" path="res://materials/wall_02.material" id="2_7jktm"]
+[ext_resource type="PackedScene" uid="uid://bjbmba0jhmy1c" path="res://components/camera_input_component.tscn" id="2_e2o6t"]
+[ext_resource type="Material" uid="uid://bxp4l765sljm0" path="res://materials/wall_01.material" id="2_fc0e3"]
+[ext_resource type="Script" uid="uid://cgqph3ouhnx78" path="res://controllers/mouse_controller.gd" id="2_feb5d"]
+[ext_resource type="Material" uid="uid://djm6qrhhcam67" path="res://materials/wall_03.material" id="2_ryrav"]
+[ext_resource type="PackedScene" uid="uid://ds1vvr4x52xy0" path="res://characters/basic_character.tscn" id="3_feb5d"]
+[ext_resource type="Script" uid="uid://drfun18pclhwd" path="res://controllers/hud_controller.gd" id="7_j5wjh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_80nbo"]
+
+[sub_resource type="Sky" id="Sky_e2o6t"]
+sky_material = SubResource("ProceduralSkyMaterial_80nbo")
+
+[sub_resource type="Environment" id="Environment_feb5d"]
+background_mode = 2
+sky = SubResource("Sky_e2o6t")
+ambient_light_source = 3
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ryrav"]
+vertices = PackedVector3Array(2.1999998, 0.02, -6.3, 2.4499998, 0.02, -5.8, 2.6999998, 0.02, -9.55, -9.55, 0.02, 0.19999981, -6.55, 0.02, 0.19999981, -6.3, 0.02, -6.3, -9.55, 0.02, -9.55, 6.2, 0.02, -2.3000002, 6.45, 0.02, -0.5500002, 9.7, 0.02, -0.8000002, 2.4499998, 0.02, -2.3000002, 9.7, 0.02, -9.55, -1.0500002, 0.02, 1.9499998, -0.8000002, 0.02, 1.9499998, -0.3000002, 0.02, 0.6999998, -4.8, 0.02, -2.3000002, -2.5500002, 0.02, -2.3000002, -2.5500002, 0.02, -3.5500002, -5.55, 0.02, -3.5500002, 0.4499998, 0.02, 0.9499998, 1.1999998, 0.02, -1.8000002, 0.9499998, 0.02, -2.0500002, 0.19999981, 0.02, -0.5500002, -4.8, 0.02, -1.5500002, -5.55, 0.02, 1.6999998, -5.55, 0.02, -4.3, -2.5500002, 0.02, -4.3, -2.5500002, 0.02, -4.8, -5.55, 0.02, -5.55, -1.8000002, 0.02, -5.05, 0.4499998, 0.02, 1.6999998, 5.45, 0.02, 1.6999998, 5.45, 0.02, -1.5500002, -0.5500002, 0.02, -0.8000002, -0.5500002, 0.02, -1.5500002, 1.4499998, 0.02, -5.55, -1.5500002, 0.02, -2.3000002, 4.45, 0.02, 6.2, 2.6999998, 0.02, 6.45, 2.9499998, 0.02, 9.7, 6.45, 0.02, 2.1999998, 4.45, 0.02, 2.4499998, 9.7, 0.02, 9.7, -6.55, 0.02, 2.1999998, -3.0500002, 0.02, 9.7, -2.8000002, 0.02, 6.45, -4.55, 0.02, 6.2, -4.55, 0.02, 2.4499998, -9.55, 0.02, 9.7, -0.5500002, 0.02, 2.4499998, -1.3000002, 0.02, 2.4499998, -1.3000002, 0.02, 4.95, -3.5500002, 0.02, 5.7, 1.6999998, 0.02, 5.7, 2.6999998, 0.02, 3.6999998, -2.5500002, 0.02, 4.95, -2.8000002, 0.02, 4.45, -3.5500002, 0.02, 2.4499998, 1.6999998, 0.02, 2.9499998, 1.9499998, 0.02, 6.2, 2.1999998, 0.02, 5.95, 3.4499998, 0.02, 2.4499998, 2.4499998, 0.02, 2.9499998, 3.4499998, 0.02, 5.7)
+polygons = [PackedInt32Array(0, 2, 1), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(0, 5, 2), PackedInt32Array(2, 5, 6), PackedInt32Array(9, 8, 7), PackedInt32Array(7, 10, 1), PackedInt32Array(1, 2, 7), PackedInt32Array(7, 2, 9), PackedInt32Array(9, 2, 11), PackedInt32Array(14, 13, 12), PackedInt32Array(16, 15, 17), PackedInt32Array(17, 15, 18), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 14), PackedInt32Array(14, 20, 19), PackedInt32Array(15, 23, 18), PackedInt32Array(18, 23, 24), PackedInt32Array(27, 26, 25), PackedInt32Array(25, 28, 27), PackedInt32Array(27, 28, 29), PackedInt32Array(19, 20, 30), PackedInt32Array(30, 20, 32), PackedInt32Array(30, 32, 31), PackedInt32Array(23, 34, 33), PackedInt32Array(29, 28, 35), PackedInt32Array(36, 29, 21), PackedInt32Array(21, 29, 35), PackedInt32Array(22, 14, 33), PackedInt32Array(33, 14, 12), PackedInt32Array(33, 12, 23), PackedInt32Array(23, 12, 24), PackedInt32Array(21, 35, 20), PackedInt32Array(39, 38, 37), PackedInt32Array(40, 8, 9), PackedInt32Array(37, 41, 40), PackedInt32Array(37, 40, 39), PackedInt32Array(39, 40, 42), PackedInt32Array(42, 40, 9), PackedInt32Array(3, 4, 43), PackedInt32Array(46, 45, 44), PackedInt32Array(46, 43, 47), PackedInt32Array(43, 46, 3), PackedInt32Array(3, 46, 44), PackedInt32Array(3, 44, 48), PackedInt32Array(13, 49, 12), PackedInt32Array(12, 49, 50), PackedInt32Array(54, 53, 51), PackedInt32Array(51, 53, 52), PackedInt32Array(52, 56, 55), PackedInt32Array(56, 52, 57), PackedInt32Array(52, 55, 51), PackedInt32Array(56, 57, 50), PackedInt32Array(49, 58, 50), PackedInt32Array(50, 58, 56), PackedInt32Array(53, 60, 59), PackedInt32Array(59, 60, 38), PackedInt32Array(62, 58, 61), PackedInt32Array(61, 58, 49), PackedInt32Array(38, 39, 59), PackedInt32Array(59, 39, 45), PackedInt32Array(45, 39, 44), PackedInt32Array(54, 62, 61), PackedInt32Array(60, 53, 63), PackedInt32Array(63, 53, 54), PackedInt32Array(63, 54, 61)]
+cell_height = 0.01
+agent_radius = 0.25
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_80nbo"]
+material = ExtResource("1_feb5d")
+size = Vector2(20, 20)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ryrav"]
+points = PackedVector3Array(-10, 0, -10, -10, 0, 10, 10, 0, -10, 10, 0, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_e2o6t"]
+data = PackedVector3Array(-0.05, -0.5, 10, -0.05, -0.5, -10, -0.05, 0.5, -10, 0.05, -0.5, -10, -0.05, -0.5, -10, -0.05, -0.5, 10, -0.05, 0.5, -10, -0.05, -0.5, -10, 0.05, -0.5, -10, -0.05, 0.5, -10, -0.05, 0.5, 10, -0.05, -0.5, 10, -0.05, -0.5, 10, -0.05, 0.5, 10, 0.05, 0.5, 10, 0.05, 0.5, 10, -0.05, 0.5, 10, -0.05, 0.5, -10, -0.05, -0.5, 10, 0.05, -0.5, 10, 0.05, -0.5, -10, 0.05, 0.5, 10, 0.05, -0.5, 10, -0.05, -0.5, 10, 0.05, -0.5, -10, 0.05, -0.5, 10, 0.05, 0.5, 10, 0.05, -0.5, -10, 0.05, 0.5, -10, -0.05, 0.5, -10, -0.05, 0.5, -10, 0.05, 0.5, -10, 0.05, 0.5, 10, 0.05, 0.5, 10, 0.05, 0.5, -10, 0.05, -0.5, -10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_feb5d"]
+data = PackedVector3Array(-0.05, -0.5, 10, -0.05, -0.5, -10, -0.05, 0.5, -10, 0.05, -0.5, -10, -0.05, -0.5, -10, -0.05, -0.5, 10, -0.05, 0.5, -10, -0.05, -0.5, -10, 0.05, -0.5, -10, -0.05, 0.5, -10, -0.05, 0.5, 10, -0.05, -0.5, 10, -0.05, -0.5, 10, -0.05, 0.5, 10, 0.05, 0.5, 10, 0.05, 0.5, 10, -0.05, 0.5, 10, -0.05, 0.5, -10, -0.05, -0.5, 10, 0.05, -0.5, 10, 0.05, -0.5, -10, 0.05, 0.5, 10, 0.05, -0.5, 10, -0.05, -0.5, 10, 0.05, -0.5, -10, 0.05, -0.5, 10, 0.05, 0.5, 10, 0.05, -0.5, -10, 0.05, 0.5, -10, -0.05, 0.5, -10, -0.05, 0.5, -10, 0.05, 0.5, -10, 0.05, 0.5, 10, 0.05, 0.5, 10, 0.05, 0.5, -10, 0.05, -0.5, -10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fc0e3"]
+data = PackedVector3Array(-0.05, -0.5, 10, -0.05, -0.5, -10, -0.05, 0.5, -10, 0.05, -0.5, -10, -0.05, -0.5, -10, -0.05, -0.5, 10, -0.05, 0.5, -10, -0.05, -0.5, -10, 0.05, -0.5, -10, -0.05, 0.5, -10, -0.05, 0.5, 10, -0.05, -0.5, 10, -0.05, -0.5, 10, -0.05, 0.5, 10, 0.05, 0.5, 10, 0.05, 0.5, 10, -0.05, 0.5, 10, -0.05, 0.5, -10, -0.05, -0.5, 10, 0.05, -0.5, 10, 0.05, -0.5, -10, 0.05, 0.5, 10, 0.05, -0.5, 10, -0.05, -0.5, 10, 0.05, -0.5, -10, 0.05, -0.5, 10, 0.05, 0.5, 10, 0.05, -0.5, -10, 0.05, 0.5, -10, -0.05, 0.5, -10, -0.05, 0.5, -10, 0.05, 0.5, -10, 0.05, 0.5, 10, 0.05, 0.5, 10, 0.05, 0.5, -10, 0.05, -0.5, -10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7jktm"]
+data = PackedVector3Array(-0.05, -0.5, 10, -0.05, -0.5, -10, -0.05, 0.5, -10, 0.05, -0.5, -10, -0.05, -0.5, -10, -0.05, -0.5, 10, -0.05, 0.5, -10, -0.05, -0.5, -10, 0.05, -0.5, -10, -0.05, 0.5, -10, -0.05, 0.5, 10, -0.05, -0.5, 10, -0.05, -0.5, 10, -0.05, 0.5, 10, 0.05, 0.5, 10, 0.05, 0.5, 10, -0.05, 0.5, 10, -0.05, 0.5, -10, -0.05, -0.5, 10, 0.05, -0.5, 10, 0.05, -0.5, -10, 0.05, 0.5, 10, 0.05, -0.5, 10, -0.05, -0.5, 10, 0.05, -0.5, -10, 0.05, -0.5, 10, 0.05, 0.5, 10, 0.05, -0.5, -10, 0.05, 0.5, -10, -0.05, 0.5, -10, -0.05, 0.5, -10, 0.05, 0.5, -10, 0.05, 0.5, 10, 0.05, 0.5, 10, 0.05, 0.5, -10, 0.05, -0.5, -10)
+
+[node name="Game" type="Node"]
+
+[node name="Humans" type="Node" parent="."]
+
+[node name="Mother" parent="Humans" instance=ExtResource("3_feb5d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+
+[node name="Father" parent="Humans" instance=ExtResource("3_feb5d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="Son" parent="Humans" instance=ExtResource("3_feb5d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -4)
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_feb5d")
+
+[node name="Terrain" type="Node3D" parent="Environment"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Environment/Terrain"]
+navigation_mesh = SubResource("NavigationMesh_ryrav")
+
+[node name="Floor" type="MeshInstance3D" parent="Environment/Terrain/NavigationRegion3D"]
+mesh = SubResource("PlaneMesh_80nbo")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Terrain/NavigationRegion3D/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Terrain/NavigationRegion3D/Floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ryrav")
+
+[node name="Props" type="Node3D" parent="Environment/Terrain/NavigationRegion3D"]
+
+[node name="ExternalWalls" type="Node" parent="Environment/Terrain/NavigationRegion3D/Props"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/ExternalWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.5, 0)
+material_override = ExtResource("2_ryrav")
+size = Vector3(0.1, 1, 20)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Terrain/NavigationRegion3D/Props/ExternalWalls/CSGBox3D"]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Environment/Terrain/NavigationRegion3D/Props/ExternalWalls/CSGBox3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_e2o6t")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/ExternalWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.5, 0)
+material_override = ExtResource("2_ryrav")
+size = Vector3(0.1, 1, 20)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Terrain/NavigationRegion3D/Props/ExternalWalls/CSGBox3D2"]
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Environment/Terrain/NavigationRegion3D/Props/ExternalWalls/CSGBox3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_feb5d")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/ExternalWalls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 10)
+material_override = ExtResource("2_ryrav")
+size = Vector3(0.1, 1, 20)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Terrain/NavigationRegion3D/Props/ExternalWalls/CSGBox3D3"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10, 0, 10)
+
+[node name="CSGBakedCollisionShape3D2" type="CollisionShape3D" parent="Environment/Terrain/NavigationRegion3D/Props/ExternalWalls/CSGBox3D3/StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, 0, 10)
+shape = SubResource("ConcavePolygonShape3D_fc0e3")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/ExternalWalls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, -10)
+material_override = ExtResource("2_ryrav")
+size = Vector3(0.1, 1, 20)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Terrain/NavigationRegion3D/Props/ExternalWalls/CSGBox3D4"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10, 0, 10)
+
+[node name="CSGBakedCollisionShape3D3" type="CollisionShape3D" parent="Environment/Terrain/NavigationRegion3D/Props/ExternalWalls/CSGBox3D4/StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, 0, -10)
+shape = SubResource("ConcavePolygonShape3D_7jktm")
+
+[node name="House" type="Node" parent="Environment/Terrain/NavigationRegion3D/Props"]
+
+[node name="Walls" type="Node" parent="Environment/Terrain/NavigationRegion3D/Props/House"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.006592, 1, 0)
+material_override = ExtResource("2_fc0e3")
+use_collision = true
+size = Vector3(0.1, 2, 4)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.006592, 1, -4)
+material_override = ExtResource("2_fc0e3")
+use_collision = true
+size = Vector3(0.1, 2, 4)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.006592, 1, -6)
+material_override = ExtResource("2_fc0e3")
+use_collision = true
+size = Vector3(0.1, 2, 4)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.006592, 1, -4)
+material_override = ExtResource("2_fc0e3")
+use_collision = true
+size = Vector3(0.1, 2, 4)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.006591797, 1, -6)
+material_override = ExtResource("2_fc0e3")
+use_collision = true
+size = Vector3(0.1, 2, 4)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9934082, 1, -4)
+material_override = ExtResource("2_fc0e3")
+use_collision = true
+size = Vector3(0.1, 2, 4)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.993408, 1, 0)
+material_override = ExtResource("2_fc0e3")
+use_collision = true
+size = Vector3(0.1, 2, 4)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.9934082, 1, -2)
+material_override = ExtResource("2_fc0e3")
+use_collision = true
+size = Vector3(0.1, 2, 4)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.9934082, 1, 2)
+material_override = ExtResource("2_fc0e3")
+use_collision = true
+size = Vector3(0.1, 2, 4)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.007, 0.5, 4)
+material_override = ExtResource("2_7jktm")
+use_collision = true
+size = Vector3(0.1, 1, 4)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.993, 0.5, 4)
+material_override = ExtResource("2_7jktm")
+use_collision = true
+size = Vector3(0.1, 1, 4)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.007, 0.5, 6)
+material_override = ExtResource("2_7jktm")
+use_collision = true
+size = Vector3(0.1, 1, 4)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+transform = Transform3D(-0.25881907, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881907, -0.0069999695, 0.5, 4)
+material_override = ExtResource("2_7jktm")
+use_collision = true
+size = Vector3(0.1, 1, 5)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 2)
+material_override = ExtResource("2_fc0e3")
+use_collision = true
+size = Vector3(4, 2, 0.1)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+use_collision = true
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.006591797, 1, 2)
+use_collision = true
+size = Vector3(0.1, 2, 4)
+material = ExtResource("2_fc0e3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.9, 2)
+operation = 2
+size = Vector3(1, 1.8, 1)
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls/CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006591797, 1, 0)
+use_collision = true
+size = Vector3(0.1, 2, 4)
+material = ExtResource("2_fc0e3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls/CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+operation = 2
+size = Vector3(1, 1.8, 2)
+
+[node name="CSGCombiner3D3" type="CSGCombiner3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls/CSGCombiner3D3"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.006591797, 1, -2)
+use_collision = true
+size = Vector3(0.1, 2, 4)
+material = ExtResource("2_fc0e3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls/CSGCombiner3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.9, -2)
+operation = 2
+size = Vector3(1, 1.8, 1)
+
+[node name="CSGCombiner3D4" type="CSGCombiner3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls/CSGCombiner3D4"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.993, 0.5, 6)
+use_collision = true
+size = Vector3(0.1, 1, 4)
+material = ExtResource("2_7jktm")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls/CSGCombiner3D4"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.993, 0.5, 6)
+operation = 2
+size = Vector3(1, 1.8, 1)
+
+[node name="CSGCombiner3D5" type="CSGCombiner3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls/CSGCombiner3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0065918, 1, -4)
+use_collision = true
+size = Vector3(0.1, 2, 4)
+material = ExtResource("2_fc0e3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls/CSGCombiner3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.007, 0.9, -5.3)
+operation = 2
+size = Vector3(1, 1.8, 1)
+
+[node name="CSGCombiner3D6" type="CSGCombiner3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls"]
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls/CSGCombiner3D6"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.006592, 1, -2)
+use_collision = true
+size = Vector3(0.1, 2, 4)
+material = ExtResource("2_fc0e3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Environment/Terrain/NavigationRegion3D/Props/House/Walls/CSGCombiner3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, 0.9, -2)
+operation = 2
+size = Vector3(1, 1.8, 1)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Gameplay" type="Node" parent="."]
+
+[node name="Interface" type="Control" parent="Gameplay"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MouseController" type="Node" parent="Gameplay/Interface"]
+script = ExtResource("2_feb5d")
+
+[node name="HUD" type="Control" parent="Gameplay/Interface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HudController" type="Node" parent="Gameplay/Interface/HUD" node_paths=PackedStringArray("label_name")]
+script = ExtResource("7_j5wjh")
+label_name = NodePath("../Panel/VBoxContainer/Label")
+
+[node name="Panel" type="Panel" parent="Gameplay/Interface/HUD"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -120.0
+offset_right = 320.0
+offset_bottom = -20.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Gameplay/Interface/HUD/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 111.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Label" type="Label" parent="Gameplay/Interface/HUD/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainCamera" type="Node3D" parent="Gameplay"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+
+[node name="CameraInputComponent" parent="Gameplay/MainCamera" node_paths=PackedStringArray("pivot") instance=ExtResource("2_e2o6t")]
+pivot = NodePath("../Pivot")
+
+[node name="Pivot" type="Node3D" parent="Gameplay/MainCamera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1213198, 2.1213198)
+
+[node name="MainCamera" type="Camera3D" parent="Gameplay/MainCamera/Pivot"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)

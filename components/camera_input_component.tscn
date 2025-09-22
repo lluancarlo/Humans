@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjbmba0jhmy1c"]
+
+[ext_resource type="Script" uid="uid://dhcxixds58k55" path="res://components/camera_input_component.gd" id="1_8boji"]
+
+[node name="CameraInputComponent" type="Node"]
+script = ExtResource("1_8boji")

@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://ds1vvr4x52xy0"]
+
+[ext_resource type="Script" uid="uid://qf30sx53yw14" path="res://characters/basic_character.gd" id="1_foqfl"]
+[ext_resource type="Material" uid="uid://cr7xedp6d1j6n" path="res://materials/basic_character_hover.material" id="2_j4eag"]
+[ext_resource type="Material" uid="uid://b1bwiswqbdwrc" path="res://materials/basic_character.material" id="2_sqjjh"]
+[ext_resource type="Material" uid="uid://ck185j78tuepo" path="res://materials/select.material" id="4_y17i2"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mwb40"]
+material = ExtResource("2_sqjjh")
+radius = 0.3
+height = 1.75
+
+[sub_resource type="BoxMesh" id="BoxMesh_y17i2"]
+size = Vector3(0.3, 0.2, 0.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_j4eag"]
+margin = 0.0
+height = 1.65
+radius = 0.4
+
+[sub_resource type="TorusMesh" id="TorusMesh_e5k0y"]
+material = ExtResource("4_y17i2")
+inner_radius = 0.4
+outer_radius = 0.5
+rings = 8
+ring_segments = 3
+
+[node name="BasicCharacter" type="CharacterBody3D" groups=["Human"]]
+script = ExtResource("1_foqfl")
+_hover_material = ExtResource("2_j4eag")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.1
+target_desired_distance = 0.1
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+mesh = SubResource("CapsuleMesh_mwb40")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21911913, 0.47085297, 0)
+mesh = SubResource("BoxMesh_y17i2")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CylinderShape3D_j4eag")
+
+[node name="SelectedEffect" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SelectedEffect"]
+mesh = SubResource("TorusMesh_e5k0y")
+skeleton = NodePath("../..")
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]
