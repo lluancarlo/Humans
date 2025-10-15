@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bom6akn7t1mm7"]
+[gd_scene load_steps=20 format=3 uid="uid://bom6akn7t1mm7"]
 
 [ext_resource type="Material" uid="uid://bau1jha3mvwlb" path="res://materials/floor.material" id="1_feb5d"]
 [ext_resource type="Material" uid="uid://c56n1klbei4q5" path="res://materials/wall_02.material" id="2_7jktm"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://djm6qrhhcam67" path="res://materials/wall_03.material" id="2_ryrav"]
 [ext_resource type="PackedScene" uid="uid://ds1vvr4x52xy0" path="res://characters/basic_character.tscn" id="3_feb5d"]
 [ext_resource type="Script" uid="uid://drfun18pclhwd" path="res://controllers/hud_controller.gd" id="7_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://dmg68qs4vmf8p" path="res://controls/mouse_context_left_click.tscn" id="8_vef74"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_80nbo"]
 
@@ -351,6 +352,9 @@ layout_mode = 2
 text = "Name"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MouseContextLeftClick" parent="Gameplay/Interface" instance=ExtResource("8_vef74")]
+layout_mode = 0
 
 [node name="MainCamera" type="Node3D" parent="Gameplay"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
